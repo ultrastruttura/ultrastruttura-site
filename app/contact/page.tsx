@@ -6,21 +6,22 @@ import styles from './page.module.css'
 import layoutStyles from '../page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Contact - ultrastruttura | Contemporary Abstract Artist',
-  description: 'Contact UltraStruttura - Contemporary abstract artist from Bergamo, Italy. Get in touch for inquiries about original abstract paintings, artwork commissions, and exhibitions. Contatta UltraStruttura - Artista astratto contemporaneo di Bergamo, Italia.',
+  title: 'Contatti | Ultrastruttura — Andrea Baldelli, Bergamo, Lombardia',
+  description:
+    'Contatta Andrea Baldelli (Ultrastruttura) per acquisto opere, commissioni su misura e collaborazioni con studi e interior designer. Artista a Bergamo, attivo in Lombardia e Nord Italia.',
   keywords: [
-    'contact ultrastruttura',
-    'contemporary artist contact',
-    'abstract art contact',
-    'art commission',
-    'contatta artista',
-    'artista contemporaneo contatto',
-    'arte astratta contatto',
+    'contatta ultrastruttura',
+    'commissione dipinto bergamo',
+    'arte per uffici lombardia',
+    'quadri su misura nord italia',
+    'artista astratto bergamo',
+    'collaborazione interior designer',
     'commissione artistica',
   ].join(', '),
   openGraph: {
-    title: 'Contact - ultrastruttura | Contemporary Abstract Artist',
-    description: 'Contact UltraStruttura - Contemporary abstract artist from Bergamo, Italy. Get in touch for inquiries about original abstract paintings and artwork commissions.',
+    title: 'Contatti | Ultrastruttura — Andrea Baldelli, Bergamo',
+    description:
+      'Richiedi informazioni su opere originali, commissioni e collaborazioni professionali. Artista contemporaneo a Bergamo, Lombardia e Nord Italia.',
     type: 'website',
     url: 'https://ultrastruttura.com/contact',
   },
@@ -42,7 +43,7 @@ export default function Contact() {
           <div className={styles.contactContainer}>
             <div className={styles.info}>
               <h1 className={styles.name}>Andrea</h1>
-              <p className={styles.location}>Bergamo, Italy</p>
+              <p className={styles.location}>Studio: Bergamo — Milano, Lombardia, Nord Italia</p>
               <a href="mailto:andrea.baldelli@icloud.com" className={styles.email}>
                 andrea.baldelli@icloud.com
               </a>

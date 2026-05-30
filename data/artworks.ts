@@ -10,6 +10,7 @@ export interface Artwork {
   location?: string
   image: string
   imageFull?: string
+  imageAlt?: string
   available?: boolean
 }
 
@@ -19,6 +20,10 @@ export interface SiteSettings {
   artistLabel: string
   seoTitle: string
   seoDescription: string
+  locality?: string
+  region?: string
+  areaServed?: string
+  serviceCities?: string[]
 }
 
 interface SocialLinks {
@@ -60,9 +65,13 @@ const defaultSiteSettings: SiteSettings = {
   brandName: 'UltraStruttura',
   artistName: 'Andrea Baldelli',
   artistLabel: 'Andrea Baldelli',
-  seoTitle: 'UltraStruttura | Contemporary Abstract Paintings & Art',
+  seoTitle: 'Ultrastruttura | Pittura Astratta Contemporanea di Andrea Baldelli',
   seoDescription:
-    'Discover unique contemporary abstract paintings by UltraStruttura. Original abstract artwork on canvas for collectors.',
+    'Dipinti astratti contemporanei originali di Andrea Baldelli (Ultrastruttura), artista a Bergamo, Lombardia. Opere su tela per collezionisti, studi professionali e commissioni in Nord Italia.',
+  locality: 'Bergamo',
+  region: 'Lombardia',
+  areaServed: 'Nord Italia',
+  serviceCities: ['Milano', 'Bergamo', 'Brescia', 'Monza', 'Como'],
 }
 
 export const siteSettings: SiteSettings = {
@@ -71,6 +80,12 @@ export const siteSettings: SiteSettings = {
   artistLabel: content.site?.artistLabel || defaultSiteSettings.artistLabel,
   seoTitle: content.site?.seoTitle || defaultSiteSettings.seoTitle,
   seoDescription: content.site?.seoDescription || defaultSiteSettings.seoDescription,
+  locality: parseOptionalString(content.site?.locality) || defaultSiteSettings.locality,
+  region: parseOptionalString(content.site?.region) || defaultSiteSettings.region,
+  areaServed: parseOptionalString(content.site?.areaServed) || defaultSiteSettings.areaServed,
+  serviceCities: Array.isArray(content.site?.serviceCities)
+    ? content.site.serviceCities.filter((c): c is string => typeof c === 'string' && c.trim() !== '')
+    : defaultSiteSettings.serviceCities,
 }
 
 export const socialLinks: SocialLinks = {
@@ -96,6 +111,7 @@ export const artworks: Artwork[] = rawArtworks
       location: parseOptionalString(artwork.location),
       image,
       imageFull: imageFull || undefined,
+      imageAlt: parseOptionalString(artwork.imageAlt),
       available: parseAvailability(artwork.available),
     })
 

@@ -1,15 +1,19 @@
 import { artworks, siteSettings, socialLinks } from '@/data/artworks'
+import { buildVisualArtworkSchema, getBaseUrl } from '@/lib/seo'
 
 export default function StructuredData() {
-  const baseUrl = 'https://ultrastruttura.com'
+  const baseUrl = getBaseUrl()
+  const locality = siteSettings.locality || 'Bergamo'
+  const region = siteSettings.region || 'Lombardia'
+  const areaServed = siteSettings.areaServed || 'Nord Italia'
+  const cities = siteSettings.serviceCities?.join(', ') || 'Milano, Bergamo'
 
-  // Schema.org per Art Gallery
   const gallerySchema = {
     '@context': 'https://schema.org',
     '@type': 'ArtGallery',
     '@id': `${baseUrl}#gallery`,
-    name: siteSettings.brandName.toLowerCase(),
-    alternateName: siteSettings.brandName,
+    name: siteSettings.brandName,
+    alternateName: siteSettings.artistName,
     description: siteSettings.seoDescription,
     url: baseUrl,
     image: {
@@ -22,98 +26,73 @@ export default function StructuredData() {
       url: `${baseUrl}/logo.webp`,
       contentUrl: `${baseUrl}/logo.webp`,
     },
-    sameAs: [
-      socialLinks.instagram,
-    ],
+    sameAs: [socialLinks.instagram],
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Bergamo',
-      addressRegion: 'Lombardy',
+      addressLocality: locality,
+      addressRegion: region,
       addressCountry: 'IT',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Milano' },
+      { '@type': 'City', name: locality },
+      { '@type': 'AdministrativeArea', name: region },
+      { '@type': 'AdministrativeArea', name: areaServed },
+    ],
+    founder: {
+      '@type': 'Person',
+      '@id': `${baseUrl}#artist`,
+      name: siteSettings.artistName,
     },
   }
 
-  // Schema.org per ogni opera
-  const artworksSchema = artworks.map((artwork) => {
-    const dimensions = artwork.dimensions?.split('x').map(d => d.trim())
-    const width = dimensions?.[0]
-    const height = dimensions?.[1]
-    
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'VisualArtwork',
-      '@id': `${baseUrl}#artwork-${artwork.id}`,
-      name: artwork.title,
-      alternateName: `${siteSettings.brandName} ${artwork.title} ${artwork.year}`,
-      description: `${artwork.title} (${artwork.year}) - Original contemporary abstract painting by ${siteSettings.brandName}. ${artwork.medium || 'Oil on canvas'}${artwork.dimensions ? `, ${artwork.dimensions}` : ''}. Unique abstract artwork for collectors.`,
-      creator: {
-        '@type': 'Person',
-        '@id': `${baseUrl}#artist`,
-        name: siteSettings.brandName,
-        givenName: siteSettings.artistName.split(' ')[0] || siteSettings.artistName,
-        familyName: siteSettings.artistName.split(' ').slice(1).join(' ') || siteSettings.artistName,
-      },
-      dateCreated: artwork.year?.toString(),
-      copyrightYear: artwork.year?.toString(),
-      artMedium: artwork.medium || 'Oil on canvas',
-      artform: 'Painting',
-      genre: 'Abstract Art',
-      artMovement: 'Contemporary Art',
-      image: {
-        '@type': 'ImageObject',
-        url: `${baseUrl}${artwork.image}`,
-        contentUrl: `${baseUrl}${artwork.image}`,
-        encodingFormat: 'image/webp',
-        width: width,
-        height: height,
-      },
-      width: width,
-      height: height,
-      copyrightHolder: {
-        '@type': 'Person',
-        '@id': `${baseUrl}#artist`,
-        name: siteSettings.brandName,
-      },
-      inLanguage: ['it', 'en', 'de', 'fr'],
-      keywords: `contemporary abstract art, abstract painting, ${artwork.medium?.toLowerCase() || 'oil on canvas'}, original artwork, ${siteSettings.brandName}, contemporary artist`,
-      material: artwork.medium || 'Oil on canvas',
-      surface: 'Canvas',
-    }
-  })
-
-  // Schema.org per Person (Artista)
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': `${baseUrl}#artist`,
-    name: siteSettings.brandName,
-    alternateName: siteSettings.artistName,
+    name: siteSettings.artistName,
+    alternateName: siteSettings.brandName,
     givenName: siteSettings.artistName.split(' ')[0] || siteSettings.artistName,
-    familyName: siteSettings.artistName.split(' ').slice(1).join(' ') || siteSettings.artistName,
-    jobTitle: 'Contemporary Artist',
-    description: 'Contemporary Italian artist from Bergamo, Italy, specializing in abstract oil paintings on canvas. Creating unique abstract artworks for collectors worldwide.',
+    familyName:
+      siteSettings.artistName.split(' ').slice(1).join(' ') || siteSettings.artistName,
+    jobTitle: 'Artista contemporaneo — pittura astratta',
+    description: `Artista contemporaneo con studio a ${locality}, ${region}. Dipinti astratti su tela per collezionisti e professionisti a ${cities} e in ${areaServed}.`,
     url: baseUrl,
     image: {
       '@type': 'ImageObject',
       url: `${baseUrl}/logo.webp`,
       contentUrl: `${baseUrl}/logo.webp`,
     },
-    sameAs: [
-      socialLinks.instagram,
-    ],
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Bergamo',
-      addressRegion: 'Lombardy',
-      postalCode: '24100',
-      addressCountry: 'IT',
+    sameAs: [socialLinks.instagram],
+    homeLocation: {
+      '@type': 'Place',
+      name: `${locality}, ${region}`,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: locality,
+        addressRegion: region,
+        addressCountry: 'IT',
+      },
     },
     nationality: {
       '@type': 'Country',
-      name: 'Italy',
+      name: 'Italia',
     },
-    knowsAbout: ['Abstract Art', 'Contemporary Art', 'Oil Painting', 'Canvas Art'],
+    knowsAbout: [
+      'Arte astratta contemporanea',
+      'Pittura su tela',
+      'Commissioni artistiche',
+      'Arte per interni',
+    ],
+    workLocation: [
+      { '@type': 'Place', name: `Milano, ${region}` },
+      { '@type': 'Place', name: areaServed },
+    ],
   }
+
+  const artworksSchema = artworks.map((artwork) =>
+    buildVisualArtworkSchema(artwork, siteSettings, baseUrl)
+  )
 
   return (
     <>
@@ -127,12 +106,11 @@ export default function StructuredData() {
       />
       {artworksSchema.map((schema, index) => (
         <script
-          key={index}
+          key={artworks[index]?.id ?? index}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
-      {/* BreadcrumbList Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -149,14 +127,13 @@ export default function StructuredData() {
               {
                 '@type': 'ListItem',
                 position: 2,
-                name: 'Contact',
+                name: 'Contatti',
                 item: `${baseUrl}/contact`,
               },
             ],
           }),
         }}
       />
-      {/* Collection Schema per la galleria */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -164,9 +141,10 @@ export default function StructuredData() {
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
             '@id': `${baseUrl}#collection`,
-            name: `${siteSettings.brandName} Art Collection`,
-            description: `Collection of contemporary abstract paintings by ${siteSettings.brandName}`,
+            name: `Collezione ${siteSettings.brandName}`,
+            description: `Collezione di dipinti astratti contemporanei di ${siteSettings.artistName} (${siteSettings.brandName}), ${locality}, ${region}.`,
             url: baseUrl,
+            inLanguage: 'it',
             mainEntity: {
               '@type': 'ItemList',
               numberOfItems: artworks.length,
@@ -176,7 +154,7 @@ export default function StructuredData() {
                 item: {
                   '@type': 'VisualArtwork',
                   '@id': `${baseUrl}#artwork-${artwork.id}`,
-                  name: artwork.title,
+                  name: artwork.title.replace(/^["']|["']$/g, '').trim(),
                 },
               })),
             },
@@ -186,9 +164,3 @@ export default function StructuredData() {
     </>
   )
 }
-
-
-
-
-
-

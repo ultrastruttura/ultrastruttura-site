@@ -3,8 +3,21 @@
     "brandName": "Ultrastruttura",
     "artistName": "Andrea Baldelli",
     "artistLabel": "Andrea Baldelli",
-    "seoTitle": "Ultrastruttura | Contemporary Abstract Paintings & Art",
-    "seoDescription": "Discover unique contemporary abstract paintings by Andrea Baldelli aka Ultrastruttura. Original abstract artwork on canvas for collectors. Explore our exclusive collection of modern abstract art."
+    "seoTitle": "Ultrastruttura | Pittura Astratta Contemporanea — Milano, Lombardia, Nord Italia",
+    "seoDescription": "Dipinti astratti contemporanei originali di Andrea Baldelli (Ultrastruttura). Studio a Bergamo, opere e commissioni per collezionisti e professionisti a Milano, in Lombardia e in tutto il Nord Italia.",
+    "locality": "Bergamo",
+    "region": "Lombardia",
+    "areaServed": "Nord Italia",
+    "serviceCities": [
+      "Milano",
+      "Bergamo",
+      "Brescia",
+      "Monza",
+      "Como",
+      "Varese",
+      "Verona",
+      "Torino"
+    ]
   },
   "social": {
     "instagram": "https://www.instagram.com/ultrastruttura/",
@@ -13,13 +26,13 @@
   "artworks": [
     {
       "available": true,
-      "imageFull": "/artworks/dunkelheit.jpg",
+      "imageFull": "/artworks/dunkelheit-dipinto-astratto-contemporaneo-milano-lombardia-2026-ultrastruttura.webp",
       "dimensions": "50x75 cm",
       "medium": "Mixed media on canvas",
-      "location": "Bergamo, Italy",
+      "location": "Bergamo, Lombardia",
       "title": "\"Dunkelheit\"",
       "id": 260504,
-      "image": "/artworks/dunkelheit.jpg",
+      "image": "/artworks/dunkelheit-dipinto-astratto-contemporaneo-milano-lombardia-2026-ultrastruttura.webp",
       "year": 2026
     },
     {
@@ -29,8 +42,9 @@
       "year": 2026,
       "medium": "Mixed media on canvas",
       "dimensions": "50x70 cm",
-      "location": "Lonno, BG, Italy",
-      "image": "/artworks/img_1923.png"
+      "location": "Lonno, Lombardia",
+      "image": "/artworks/se-la-luce-ci-prende-dipinto-astratto-contemporaneo-lombardia-nord-italia-2026-ultrastruttura.webp",
+      "imageFull": "/artworks/se-la-luce-ci-prende-dipinto-astratto-contemporaneo-lombardia-nord-italia-2026-ultrastruttura.webp"
     },
     {
       "id": 3,
@@ -38,7 +52,7 @@
       "year": 2021,
       "medium": "Olio su tela",
       "dimensions": "40x40 cm",
-      "image": "/artworks/original-abstract-painting-on-canvas-03-dipinto-astratto-su-tela-03-peinture-abstraite-sur-toile-03-abstraktes-gemaelde-auf-leinwand-03.webp"
+      "image": "/artworks/se-gli-piace-lacqua-buttatelo-nel-fiume-dipinto-astratto-contemporaneo-milano-nord-italia-2021-ultrastruttura.webp"
     },
     {
       "id": 4,
@@ -46,7 +60,7 @@
       "year": 2021,
       "medium": "Olio su tela",
       "dimensions": "50x60 cm",
-      "image": "/artworks/contemporary-abstract-art-for-collectors-04-arte-astratta-per-collezionisti-04-art-abstrait-pour-collectionneurs-04-abstrakte-kunst-fuer-sammler-04.webp"
+      "image": "/artworks/le-evasioni-barbariche-dipinto-astratto-contemporaneo-milano-lombardia-2021-ultrastruttura.webp"
     },
     {
       "id": 6,
@@ -54,7 +68,7 @@
       "year": 2020,
       "medium": "Acrilico e resina epossidica su zinco",
       "dimensions": "20x30x2 cm",
-      "image": "/artworks/unique-abstract-artwork-06-opera-arte-astratta-unica-06-oeuvre-art-abstraite-unique-06-einzigartiges-abstraktes-kunstwerk-06.webp",
+      "image": "/artworks/vi-gora-dipinto-astratto-contemporaneo-nord-italia-lombardia-2020-ultrastruttura.webp",
       "available": false
     },
     {
@@ -63,7 +77,7 @@
       "year": 2021,
       "medium": "Olio e acrilico su tela",
       "dimensions": "45x55 cm",
-      "image": "/artworks/unique-abstract-artwork-18-opera-arte-astratta-unica-18-oeuvre-art-abstraite-unique-18-einzigartiges-abstraktes-kunstwerk-18.webp"
+      "image": "/artworks/la-parte-a-maggese-dipinto-astratto-contemporaneo-milano-bergamo-lombardia-2021-ultrastruttura.webp"
     }
   ]
 }

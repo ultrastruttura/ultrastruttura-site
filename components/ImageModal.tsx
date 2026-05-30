@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 import styles from './ImageModal.module.css'
-import { Artwork } from '@/data/artworks'
+import { Artwork, siteSettings } from '@/data/artworks'
+import { buildArtworkAltText } from '@/lib/seo'
 
 interface ImageModalProps {
   artwork: Artwork | null
@@ -196,7 +197,7 @@ export default function ImageModal({
         <div className={styles.imageContainer}>
           <img
             src={modalImageSrc}
-            alt={`${artwork.title} (${artwork.year || ''}) - Original Contemporary Abstract Painting by UltraStruttura | ${artwork.medium || 'Oil on canvas'} | ${artwork.dimensions || ''}`}
+            alt={buildArtworkAltText(artwork, siteSettings)}
             className={styles.modalImage}
             loading="eager"
             fetchPriority="high"

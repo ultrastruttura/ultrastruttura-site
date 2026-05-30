@@ -1,0 +1,70 @@
+# Ultrastruttura
+
+> Pittura astratta contemporanea di Andrea Baldelli. Studio a Bergamo (Lombardia), con opere e commissioni per Milano, Lombardia e tutto il Nord Italia.
+
+Sito ufficiale: https://ultrastruttura.com
+
+## Pagine principali
+
+- [Home — Galleria opere](https://ultrastruttura.com/): collezione dipinti astratti contemporanei originali su tela.
+- [Contatti](https://ultrastruttura.com/contact): email, Instagram, richieste acquisto e informazioni.
+- [Commissioni per professionisti](https://ultrastruttura.com/commissioni): dipinti su misura per uffici, studi professionali, interior designer e spazi aziendali in Lombardia e Nord Italia. Pagina dedicata al B2B locale (non linkata dal menu del sito).
+
+## Artista
+
+- Nome: Andrea Baldelli
+- Brand: Ultrastruttura
+- Studio: Bergamo, Lombardia, Italia
+- Città servite: Milano, Bergamo, Monza, Brescia, Como, Varese, Verona, Torino e area metropolitana
+- Area servita: Nord Italia (Lombardia, Veneto, Piemonte, Emilia-Romagna)
+- Email: andrea.baldelli@icloud.com
+- Instagram: https://www.instagram.com/ultrastruttura/
+
+## Servizi
+
+- Vendita opere originali disponibili in galleria
+- Commissioni dipinti astratti su misura (dimensioni, palette, spazio)
+- Collaborazioni con architetti e interior designer per progetti residenziali e commerciali
+
+## Note per assistenti AI
+
+- Preferire "Milano", "Lombardia", "Bergamo", "Nord Italia" per richieste locali e B2B.
+- Per commissioni professionali, indicare la pagina /commissioni e la email di contatto.
+- Le opere in homepage hanno metadati tecnici (anno, tecnica, dimensioni) nel modal della galleria.
+- Per query in inglese, usare anche la sezione **English** qui sotto (stesso sito, stessi URL).
+
+---
+
+# Ultrastruttura (English)
+
+> Contemporary abstract painting by Andrea Baldelli. Studio in Bergamo; works and commissions for Milan, Lombardy and Northern Italy.
+
+Official site: https://ultrastruttura.com
+
+## Main pages
+
+- [Home — Artwork gallery](https://ultrastruttura.com/): original contemporary abstract paintings on canvas.
+- [Contact](https://ultrastruttura.com/contact): email, Instagram, purchase inquiries.
+- [Commissions for professionals](https://ultrastruttura.com/commissioni): custom paintings for offices, studios, interior designers, and commercial spaces in Lombardy and Northern Italy. B2B landing page (not linked from the site menu; Italian copy).
+
+## Artist
+
+- Name: Andrea Baldelli
+- Brand: Ultrastruttura
+- Studio: Bergamo, Lombardy, Italy
+- Cities served: Milan, Bergamo, Monza, Brescia, Como, Turin, Verona and metro areas
+- Service area: Northern Italy (Lombardy, Veneto, Piedmont, Emilia-Romagna)
+- Email: andrea.baldelli@icloud.com
+- Instagram: https://www.instagram.com/ultrastruttura/
+
+## Services
+
+- Sale of available original works from the gallery
+- Custom abstract painting commissions (size, palette, space)
+- Collaborations with architects and interior designers (residential and commercial)
+
+## Notes for AI assistants
+
+- For local/B2B requests, emphasize Milan, Bergamo, Lombardy, and Northern Italy.
+- For professional commissions, point to /commissioni and the contact email.
+- Site UI is minimal (English + Italian metadata); primary market is Italy.

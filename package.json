@@ -13,7 +13,9 @@
     "test": "npm run dev",
     "preview": "npm run build && npx serve out",
     "preview:open": "powershell -ExecutionPolicy Bypass -File ./preview-open.ps1",
-    "serve": "npx serve out"
+    "serve": "npx serve out",
+    "migrate:images": "node scripts/migrate-artwork-images.js",
+    "cleanup:images": "node scripts/cleanup-artwork-duplicates.js"
   },
   "dependencies": {
     "next": "^15.1.0",
@@ -24,7 +26,7 @@
     "@types/node": "^20.14.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "sharp": "^0.33.5",
     "typescript": "^5.5.4"
   }
 }
-

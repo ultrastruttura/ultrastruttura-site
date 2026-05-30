@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import styles from './Gallery.module.css'
-import { artworks, type Artwork } from '@/data/artworks'
+import { artworks, siteSettings, type Artwork } from '@/data/artworks'
+import { buildArtworkAltText } from '@/lib/seo'
 import ImageModal from './ImageModal'
 import ImageSkeleton from './ImageSkeleton'
 
@@ -191,8 +192,8 @@ export default function Gallery() {
                         imageRefs.current[index] = el
                       }}
                       src={artwork.image}
-                      alt={`${artwork.title} (${artwork.year}) - Original Contemporary Abstract Painting by UltraStruttura | ${artwork.medium || 'Oil on canvas'} | ${artwork.dimensions || ''}`}
-                      title={`${artwork.title} (${artwork.year}) by UltraStruttura - Contemporary Abstract Art`}
+                      alt={buildArtworkAltText(artwork, siteSettings)}
+                      title={`${artwork.title} (${artwork.year}) — ${siteSettings.artistName}, ${siteSettings.locality}`}
                       className={`${styles.artworkImage} ${isLoaded ? styles.artworkImageLoaded : styles.artworkImageLoading}`}
                       loading={isCritical ? 'eager' : 'lazy'}
                       decoding={isCritical ? 'sync' : 'async'}
