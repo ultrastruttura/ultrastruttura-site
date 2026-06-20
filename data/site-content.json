@@ -1,13 +1,12 @@
 {
   "site": {
-    "brandName": "Ultrastruttura",
-    "artistName": "Andrea Baldelli",
-    "artistLabel": "Andrea Baldelli",
-    "seoTitle": "Ultrastruttura | Pittura Astratta Contemporanea — Milano, Lombardia, Nord Italia",
-    "seoDescription": "Dipinti astratti contemporanei originali di Andrea Baldelli (Ultrastruttura). Studio a Bergamo, opere e commissioni per collezionisti e professionisti a Milano, in Lombardia e in tutto il Nord Italia.",
-    "locality": "Bergamo",
-    "region": "Lombardia",
     "areaServed": "Nord Italia",
+    "locality": "Bergamo",
+    "artistLabel": "Andrea Baldelli",
+    "artistName": "Andrea Baldelli",
+    "brandName": "Ultrastruttura",
+    "region": "Lombardia",
+    "seoTitle": "Ultrastruttura | Pittura Astratta Contemporanea — Milano, Lombardia, Nord Italia",
     "serviceCities": [
       "Milano",
       "Bergamo",
@@ -17,13 +16,24 @@
       "Varese",
       "Verona",
       "Torino"
-    ]
+    ],
+    "seoDescription": "Dipinti astratti contemporanei originali di Andrea Baldelli (Ultrastruttura). Studio a Bergamo, opere e commissioni per collezionisti e professionisti a Milano, in Lombardia e in tutto il Nord Italia."
   },
   "social": {
     "instagram": "https://www.instagram.com/ultrastruttura/",
     "twitterHandle": ""
   },
   "artworks": [
+    {
+      "available": true,
+      "id": 260519,
+      "title": "\"Il sistema c'è\"",
+      "year": 2026,
+      "medium": "Tecnica mista su zinco in resina epossidica",
+      "dimensions": "18x24x2 cm",
+      "location": "Bergamo, Italy",
+      "image": "/artworks/img_3435_snapseedcopy.jpg"
+    },
     {
       "available": true,
       "imageFull": "/artworks/dunkelheit-dipinto-astratto-contemporaneo-milano-lombardia-2026-ultrastruttura.webp",
@@ -37,14 +47,14 @@
     },
     {
       "available": true,
-      "id": 260210,
-      "title": "\"Se la luce ci prende\"",
-      "year": 2026,
-      "medium": "Mixed media on canvas",
+      "imageFull": "/artworks/se-la-luce-ci-prende-dipinto-astratto-contemporaneo-lombardia-nord-italia-2026-ultrastruttura.webp",
       "dimensions": "50x70 cm",
+      "medium": "Mixed media on canvas",
       "location": "Lonno, Lombardia",
+      "title": "\"Se la luce ci prende\"",
+      "id": 260210,
       "image": "/artworks/se-la-luce-ci-prende-dipinto-astratto-contemporaneo-lombardia-nord-italia-2026-ultrastruttura.webp",
-      "imageFull": "/artworks/se-la-luce-ci-prende-dipinto-astratto-contemporaneo-lombardia-nord-italia-2026-ultrastruttura.webp"
+      "year": 2026
     },
     {
       "id": 3,
