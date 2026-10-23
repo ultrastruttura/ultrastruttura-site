@@ -26,6 +26,16 @@
   "artworks": [
     {
       "available": true,
+      "id": 261022,
+      "title": "\"Hamal\"",
+      "year": 2026,
+      "medium": "Mixed media and epoxy resin on MDF",
+      "dimensions": "24 x 31 x 2 cm",
+      "location": "Bergamo, Italy",
+      "image": "/artworks/hamal.jpg"
+    },
+    {
+      "available": true,
       "id": 260519,
       "title": "\"Il sistema c'è\"",
       "year": 2026,
@@ -73,31 +83,12 @@
       "image": "/artworks/le-evasioni-barbariche-dipinto-astratto-contemporaneo-milano-lombardia-2021-ultrastruttura.webp"
     },
     {
-      "id": 6,
-      "title": "\"VI gora\"",
-      "year": 2020,
-      "medium": "Acrilico e resina epossidica su zinco",
-      "dimensions": "20x30x2 cm",
-      "image": "/artworks/vi-gora-dipinto-astratto-contemporaneo-nord-italia-lombardia-2020-ultrastruttura.webp",
-      "available": false
-    },
-    {
       "id": 18,
       "title": "\"La parte a maggese\"",
       "year": 2021,
       "medium": "Olio e acrilico su tela",
       "dimensions": "45x55 cm",
       "image": "/artworks/la-parte-a-maggese-dipinto-astratto-contemporaneo-milano-bergamo-lombardia-2021-ultrastruttura.webp"
-    },
-    {
-      "available": true,
-      "id": 261022,
-      "title": "Hamal",
-      "year": 2026,
-      "medium": "Mixed media and epoxy resin on MDF",
-      "dimensions": "24 x 31 x 2 cm",
-      "location": "Bergamo, Italy",
-      "image": "/artworks/hamal.jpg"
     }
   ]
 }
