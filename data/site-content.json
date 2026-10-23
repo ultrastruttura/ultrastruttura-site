@@ -88,6 +88,16 @@
       "medium": "Olio e acrilico su tela",
       "dimensions": "45x55 cm",
       "image": "/artworks/la-parte-a-maggese-dipinto-astratto-contemporaneo-milano-bergamo-lombardia-2021-ultrastruttura.webp"
+    },
+    {
+      "available": true,
+      "id": 261022,
+      "title": "Hamal",
+      "year": 2026,
+      "medium": "Mixed media and epoxy resin on MDF",
+      "dimensions": "24 x 31 x 2 cm",
+      "location": "Bergamo, Italy",
+      "image": "/artworks/hamal.jpg"
     }
   ]
 }
