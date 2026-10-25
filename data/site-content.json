@@ -26,13 +26,14 @@
   "artworks": [
     {
       "available": true,
-      "id": 261022,
-      "title": "\"Hamal\"",
-      "year": 2026,
-      "medium": "Mixed media and epoxy resin on MDF",
+      "imageFull": "/artworks/261022-hamal-300.jpg",
       "dimensions": "24 x 31 x 2 cm",
+      "medium": "Mixed media and epoxy resin on MDF",
       "location": "Bergamo, Italy",
-      "image": "/artworks/hamal.jpg"
+      "title": "\"Hamal\"",
+      "id": 261022,
+      "image": "/artworks/261022-hamal-72.jpg",
+      "year": 2026
     },
     {
       "available": true,
