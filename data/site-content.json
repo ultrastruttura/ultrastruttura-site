@@ -26,17 +26,6 @@
   "artworks": [
     {
       "available": true,
-      "imageFull": "/artworks/261022-hamal-300.jpg",
-      "dimensions": "24 x 31 x 2 cm",
-      "medium": "Mixed media and epoxy resin on MDF",
-      "location": "Bergamo, Italy",
-      "title": "\"Hamal\"",
-      "id": 261022,
-      "image": "/artworks/261022-hamal-72.jpg",
-      "year": 2026
-    },
-    {
-      "available": true,
       "id": 260519,
       "title": "\"Il sistema c'è\"",
       "year": 2026,
