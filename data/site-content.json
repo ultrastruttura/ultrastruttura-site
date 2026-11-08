@@ -26,6 +26,16 @@
   "artworks": [
     {
       "available": true,
+      "id": 261025,
+      "title": "\"Betelgeuse\"",
+      "year": 2013,
+      "medium": "Inchiostro serigrafico dicroico, acrilico, inchiostro di bombay, resina epossidica su MDF",
+      "dimensions": "63,5x49x2cm",
+      "image": "/artworks/261025-betelgeuse-72.jpg",
+      "imageFull": "/artworks/261025-betelgeuse-300.jpg"
+    },
+    {
+      "available": true,
       "imageFull": "/artworks/261022-hamal-300.jpg",
       "dimensions": "24x31x2cm",
       "info": "",
@@ -90,16 +100,6 @@
       "medium": "Olio e acrilico su tela",
       "dimensions": "45x55 cm",
       "image": "/artworks/la-parte-a-maggese-dipinto-astratto-contemporaneo-milano-bergamo-lombardia-2021-ultrastruttura.webp"
-    },
-    {
-      "available": true,
-      "id": 261025,
-      "title": "\"Betelgeuse\"",
-      "year": 2013,
-      "medium": "Inchiostro serigrafico dicroico, acrilico, inchiostro di bombay, resina epossidica su MDF",
-      "dimensions": "63,5x49x2cm",
-      "image": "/artworks/261025-betelgeuse-72.jpg",
-      "imageFull": "/artworks/261025-betelgeuse-300.jpg"
     }
   ]
 }
