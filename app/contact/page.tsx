@@ -6,22 +6,22 @@ import styles from './page.module.css'
 import layoutStyles from '../page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Contatti | Ultrastruttura — Andrea Baldelli, Bergamo, Lombardia',
+  title: 'Contatti | Ultrastruttura — Andrea Baldelli, Bergamo / Milano',
   description:
-    'Contatta Andrea Baldelli (Ultrastruttura) per acquisto opere, commissioni su misura e collaborazioni con studi e interior designer. Artista a Bergamo, attivo in Lombardia e Nord Italia.',
+    'Contatta Andrea Baldelli (Ultrastruttura) per acquisto opere, commissioni e collaborazioni con studi, interior designer e gallerie. Bergamo, Milano, Lombardia, Nord Italia e network internazionale.',
   keywords: [
     'contatta ultrastruttura',
-    'commissione dipinto bergamo',
+    'commissione dipinto milano',
     'arte per uffici lombardia',
     'quadri su misura nord italia',
     'artista astratto bergamo',
     'collaborazione interior designer',
-    'commissione artistica',
+    'galleria arte astratta contemporanea',
   ].join(', '),
   openGraph: {
-    title: 'Contatti | Ultrastruttura — Andrea Baldelli, Bergamo',
+    title: 'Contatti | Ultrastruttura — Andrea Baldelli',
     description:
-      'Richiedi informazioni su opere originali, commissioni e collaborazioni professionali. Artista contemporaneo a Bergamo, Lombardia e Nord Italia.',
+      'Opere originali, commissioni e collaborazioni professionali o galleristiche. Bergamo / Milano, Nord Italia e internazionale.',
     type: 'website',
     url: 'https://ultrastruttura.com/contact',
   },
@@ -34,7 +34,7 @@ export default function Contact() {
   return (
     <div className={layoutStyles.layout}>
       <a href="#main-content" className={layoutStyles.skipLink}>
-        Skip to main content
+        Vai al contenuto
       </a>
       <Navigation />
       <main id="main-content" className={layoutStyles.main}>
@@ -43,6 +43,10 @@ export default function Contact() {
           <div className={styles.contactContainer}>
             <div className={styles.info}>
               <h1 className={styles.name}>Andrea</h1>
+              <p className={layoutStyles.srOnly}>
+                Contatti Ultrastruttura — Andrea Baldelli. Pittura astratta contemporanea.
+                Richieste da studi, interior designer, collezionisti e gallerie internazionali.
+              </p>
               <p className={styles.location}>Studio: Bergamo — Milano, Lombardia, Nord Italia</p>
               <a href="mailto:andrea.baldelli@icloud.com" className={styles.email}>
                 andrea.baldelli@icloud.com

@@ -4,47 +4,34 @@ import StructuredData from '@/components/StructuredData'
 import ScrollProgress from '@/components/ScrollProgress'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import GoogleSearchConsole from '@/components/GoogleSearchConsole'
-import { siteSettings, socialLinks } from '@/data/artworks'
+import { artworks, siteSettings, socialLinks } from '@/data/artworks'
+
+const ogArtwork =
+  artworks.find((a) => a.id === 260504)?.image ||
+  artworks[0]?.image ||
+  '/logo.webp'
 
 export const metadata: Metadata = {
   title: siteSettings.seoTitle,
   description: siteSettings.seoDescription,
   keywords: [
     'ultrastruttura',
-    'andrea baldelli pittore',
-    'dipinto astratto bergamo',
+    'andrea baldelli',
+    'pittura astratta contemporanea',
+    'dipinto astratto milano',
     'arte astratta lombardia',
     'pittura astratta nord italia',
-    'quadri per uffici bergamo',
+    'quadri per uffici milano',
     'commissioni artistiche lombardia',
-    'original contemporary abstract painting',
-    'dipinto astratto contemporaneo originale',
-    'opera arte astratta unica',
-    'dipinto astratto su tela',
-    'arte astratta per collezionisti',
-    'peinture abstraite contemporaine originale',
-    'œuvre d\'art abstraite unique',
-    'peinture abstraite sur toile',
-    'art abstrait pour collectionneurs',
-    'originales zeitgenössisches abstraktes Gemälde',
-    'einzigartiges abstraktes Kunstwerk',
-    'abstraktes Gemälde auf Leinwand',
-    'abstrakte Kunst für Sammler',
-    'contemporary art',
-    'arte contemporanea',
-    'zeitgenössische kunst',
-    'art contemporain',
-    'paintings',
-    'dipinti',
-    'gemälde',
-    'peintures',
-    'oil paintings',
-    'olio su tela',
-    'Italian artist',
-    'artista italiano',
+    'arte per interior designer',
+    'dipinto astratto originale',
+    'opera su zinco resina epossidica',
+    'contemporary abstract painting italy',
+    'italian abstract artist bergamo',
+    'art for galleries and collectors',
   ].join(', '),
   authors: [{ name: siteSettings.artistName }],
-  creator: siteSettings.brandName,
+  creator: siteSettings.artistName,
   publisher: siteSettings.brandName,
   robots: {
     index: true,
@@ -66,15 +53,15 @@ export const metadata: Metadata = {
     description: siteSettings.seoDescription,
     type: 'website',
     locale: 'it_IT',
-    alternateLocale: ['en_US', 'de_DE', 'fr_FR', 'ja_JP'],
-    siteName: 'ultrastruttura',
+    alternateLocale: ['en_US'],
+    siteName: siteSettings.brandName,
     url: 'https://ultrastruttura.com',
     images: [
       {
-        url: 'https://ultrastruttura.com/logo.webp',
+        url: `https://ultrastruttura.com${ogArtwork}`,
         width: 1200,
-        height: 630,
-        alt: 'Ultrastruttura — Pittura astratta contemporanea di Andrea Baldelli, Bergamo, Lombardia',
+        height: 1600,
+        alt: 'Ultrastruttura — pittura astratta contemporanea di Andrea Baldelli, Milano e Nord Italia',
       },
     ],
   },
@@ -82,8 +69,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteSettings.seoTitle,
     description: siteSettings.seoDescription,
-    creator: socialLinks.twitterHandle,
-    images: ['https://ultrastruttura.com/logo.webp'],
+    creator: socialLinks.twitterHandle || undefined,
+    images: [`https://ultrastruttura.com${ogArtwork}`],
   },
   other: {
     'instagram:creator': '@ultrastruttura',
@@ -95,19 +82,13 @@ export const metadata: Metadata = {
     canonical: 'https://ultrastruttura.com',
     languages: {
       'it': 'https://ultrastruttura.com',
-      'en': 'https://ultrastruttura.com',
-      'de': 'https://ultrastruttura.com',
-      'fr': 'https://ultrastruttura.com',
-      'ja': 'https://ultrastruttura.com',
-    },
-    types: {
-      'application/rss+xml': [{ url: 'https://ultrastruttura.com', title: 'UltraStruttura Artworks' }],
+      'x-default': 'https://ultrastruttura.com',
     },
   },
   category: 'Art',
   classification: 'Contemporary Abstract Art',
   referrer: 'origin-when-cross-origin',
-  applicationName: 'UltraStruttura',
+  applicationName: 'Ultrastruttura',
   generator: 'Next.js',
   metadataBase: new URL('https://ultrastruttura.com'),
 }
@@ -125,23 +106,19 @@ export default function RootLayout({
         <link rel="canonical" href="https://ultrastruttura.com" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="format-detection" content="telephone=no" />
-        
-        {/* Resource hints per performance */}
         <link rel="preconnect" href="https://www.instagram.com" />
         <link rel="dns-prefetch" href="https://www.instagram.com" />
-        
-        {/* Preload del logo critico */}
-        <link 
-          rel="preload" 
-          href="/logo.webp" 
-          as="image" 
+        <link
+          rel="preload"
+          href="/logo.webp"
+          as="image"
           type="image/webp"
           fetchPriority="high"
         />
-        <link 
-          rel="preload" 
-          href="/favicon.webp" 
-          as="image" 
+        <link
+          rel="preload"
+          href="/favicon.webp"
+          as="image"
           type="image/webp"
         />
       </head>

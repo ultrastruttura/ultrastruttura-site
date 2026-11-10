@@ -1,4 +1,4 @@
-import { artworks, siteSettings, socialLinks } from '@/data/artworks'
+import { artworks, getArtworkSlug, siteSettings, socialLinks } from '@/data/artworks'
 import { buildVisualArtworkSchema, getBaseUrl } from '@/lib/seo'
 
 export default function StructuredData() {
@@ -18,8 +18,8 @@ export default function StructuredData() {
     url: baseUrl,
     image: {
       '@type': 'ImageObject',
-      url: `${baseUrl}/logo.webp`,
-      contentUrl: `${baseUrl}/logo.webp`,
+      url: `${baseUrl}${artworks[0]?.image || '/logo.webp'}`,
+      contentUrl: `${baseUrl}${artworks[0]?.image || '/logo.webp'}`,
     },
     logo: {
       '@type': 'ImageObject',
@@ -56,7 +56,7 @@ export default function StructuredData() {
     familyName:
       siteSettings.artistName.split(' ').slice(1).join(' ') || siteSettings.artistName,
     jobTitle: 'Artista contemporaneo — pittura astratta',
-    description: `Artista contemporaneo con studio a ${locality}, ${region}. Dipinti astratti su tela per collezionisti e professionisti a ${cities} e in ${areaServed}.`,
+    description: `Artista contemporaneo con studio a ${locality}, ${region}. Ricerca pittorica su materia e struttura (Ultrastruttura). Opere originali e commissioni per professionisti a ${cities}, collezionisti in ${areaServed} e gallerie internazionali.`,
     url: baseUrl,
     image: {
       '@type': 'ImageObject',
@@ -81,8 +81,11 @@ export default function StructuredData() {
     knowsAbout: [
       'Arte astratta contemporanea',
       'Pittura su tela',
+      'Tecnica mista su zinco',
+      'Resina epossidica',
       'Commissioni artistiche',
       'Arte per interni',
+      'Collaborazioni con gallerie',
     ],
     workLocation: [
       { '@type': 'Place', name: `Milano, ${region}` },
@@ -91,7 +94,9 @@ export default function StructuredData() {
   }
 
   const artworksSchema = artworks.map((artwork) =>
-    buildVisualArtworkSchema(artwork, siteSettings, baseUrl)
+    buildVisualArtworkSchema(artwork, siteSettings, baseUrl, {
+      url: `${baseUrl}/opere/${getArtworkSlug(artwork)}`,
+    })
   )
 
   return (
@@ -127,6 +132,12 @@ export default function StructuredData() {
               {
                 '@type': 'ListItem',
                 position: 2,
+                name: 'Commissioni',
+                item: `${baseUrl}/commissioni`,
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
                 name: 'Contatti',
                 item: `${baseUrl}/contact`,
               },
@@ -142,7 +153,7 @@ export default function StructuredData() {
             '@type': 'CollectionPage',
             '@id': `${baseUrl}#collection`,
             name: `Collezione ${siteSettings.brandName}`,
-            description: `Collezione di dipinti astratti contemporanei di ${siteSettings.artistName} (${siteSettings.brandName}), ${locality}, ${region}.`,
+            description: `Collezione di opere astratte contemporanee di ${siteSettings.artistName} (${siteSettings.brandName}), ${locality}, ${region} — per professionisti, collezionisti e gallerie.`,
             url: baseUrl,
             inLanguage: 'it',
             mainEntity: {
@@ -151,6 +162,7 @@ export default function StructuredData() {
               itemListElement: artworks.map((artwork, index) => ({
                 '@type': 'ListItem',
                 position: index + 1,
+                url: `${baseUrl}/opere/${getArtworkSlug(artwork)}`,
                 item: {
                   '@type': 'VisualArtwork',
                   '@id': `${baseUrl}#artwork-${artwork.id}`,

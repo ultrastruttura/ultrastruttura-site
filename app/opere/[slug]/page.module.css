@@ -1,0 +1,85 @@
+.page {
+  padding: 2rem;
+  min-height: calc(100vh - 100px);
+  width: 100%;
+}
+
+.container {
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.figure {
+  margin: 0;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+  background: #f7f7f7;
+}
+
+.h1 {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 400;
+  margin: 0;
+  color: #000000;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.meta {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  color: #333333;
+}
+
+.availability {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 0.875rem;
+  margin: 0;
+  color: #666666;
+}
+
+.info {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+  color: #000000;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.link {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 0.875rem;
+  color: #666666;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1.5rem 1.25rem;
+  }
+}

@@ -1,12 +1,13 @@
 {
   "site": {
-    "areaServed": "Nord Italia",
-    "locality": "Bergamo",
-    "artistLabel": "Andrea Baldelli",
-    "artistName": "Andrea Baldelli",
     "brandName": "Ultrastruttura",
-    "region": "Lombardia",
+    "artistName": "Andrea Baldelli",
+    "artistLabel": "Andrea Baldelli",
     "seoTitle": "Ultrastruttura | Pittura Astratta Contemporanea — Milano, Lombardia, Nord Italia",
+    "seoDescription": "Dipinti astratti contemporanei originali di Andrea Baldelli (Ultrastruttura). Studio a Bergamo. Opere e commissioni per studi, interior designer, collezionisti e gallerie — Milano, Lombardia, Nord Italia e network internazionale.",
+    "locality": "Bergamo",
+    "region": "Lombardia",
+    "areaServed": "Nord Italia",
     "serviceCities": [
       "Milano",
       "Bergamo",
@@ -16,8 +17,7 @@
       "Varese",
       "Verona",
       "Torino"
-    ],
-    "seoDescription": "Dipinti astratti contemporanei originali di Andrea Baldelli (Ultrastruttura). Studio a Bergamo, opere e commissioni per collezionisti e professionisti a Milano, in Lombardia e in tutto il Nord Italia."
+    ]
   },
   "social": {
     "instagram": "https://www.instagram.com/ultrastruttura/",
@@ -52,30 +52,34 @@
       "year": 2026,
       "medium": "Tecnica mista su zinco in resina epossidica",
       "dimensions": "18x24x2 cm",
-      "location": "Bergamo, Italy",
-      "image": "/artworks/img_3435_snapseedcopy.jpg"
-    },
-    {
-      "available": true,
-      "imageFull": "/artworks/dunkelheit-dipinto-astratto-contemporaneo-milano-lombardia-2026-ultrastruttura.webp",
-      "dimensions": "50x75 cm",
-      "medium": "Mixed media on canvas",
       "location": "Bergamo, Lombardia",
-      "title": "\"Dunkelheit\"",
-      "id": 260504,
-      "image": "/artworks/dunkelheit-dipinto-astratto-contemporaneo-milano-lombardia-2026-ultrastruttura.webp",
-      "year": 2026
+      "image": "/artworks/il-sistema-ce-dipinto-astratto-contemporaneo-milano-lombardia-2026-ultrastruttura.webp",
+      "imageFull": "/artworks/il-sistema-ce-dipinto-astratto-contemporaneo-milano-lombardia-2026-ultrastruttura.webp",
+      "info": "Piccolo formato materico su zinco: la resina epossidica sigilla una superficie densa, dove la struttura dell'opera diventa oggetto. Ideale per studi, vetrine e collezioni che cercano pezzi unici a scala intima."
     },
     {
       "available": true,
-      "imageFull": "/artworks/se-la-luce-ci-prende-dipinto-astratto-contemporaneo-lombardia-nord-italia-2026-ultrastruttura.webp",
-      "dimensions": "50x70 cm",
-      "medium": "Mixed media on canvas",
-      "location": "Lonno, Lombardia",
-      "title": "\"Se la luce ci prende\"",
+      "id": 260504,
+      "title": "\"Dunkelheit\"",
+      "year": 2026,
+      "medium": "Tecnica mista su tela",
+      "dimensions": "50x75 cm",
+      "location": "Bergamo, Lombardia",
+      "image": "/artworks/dunkelheit-dipinto-astratto-contemporaneo-milano-lombardia-2026-ultrastruttura.webp",
+      "imageFull": "/artworks/dunkelheit-dipinto-astratto-contemporaneo-milano-lombardia-2026-ultrastruttura.webp",
+      "info": "Campo scuro e texture materiche: un dipinto astratto contemporaneo pensato per interni essenziali, uffici e progetti di arredo dove il nero e la materia creano presenza senza figurazione."
+    },
+    {
+      "available": true,
       "id": 260210,
+      "title": "\"Se la luce ci prende\"",
+      "year": 2026,
+      "medium": "Tecnica mista su tela",
+      "dimensions": "50x70 cm",
+      "location": "Lonno, Lombardia",
       "image": "/artworks/se-la-luce-ci-prende-dipinto-astratto-contemporaneo-lombardia-nord-italia-2026-ultrastruttura.webp",
-      "year": 2026
+      "imageFull": "/artworks/se-la-luce-ci-prende-dipinto-astratto-contemporaneo-lombardia-nord-italia-2026-ultrastruttura.webp",
+      "info": "Luce e materia in tensione: opera astratta su tela adatta a spazi residenziali e professionali in Lombardia e Nord Italia, con una lettura che cambia con l'illuminazione ambientale."
     },
     {
       "id": 3,
@@ -83,7 +87,9 @@
       "year": 2021,
       "medium": "Olio su tela",
       "dimensions": "40x40 cm",
-      "image": "/artworks/se-gli-piace-lacqua-buttatelo-nel-fiume-dipinto-astratto-contemporaneo-milano-nord-italia-2021-ultrastruttura.webp"
+      "location": "Bergamo, Lombardia",
+      "image": "/artworks/se-gli-piace-lacqua-buttatelo-nel-fiume-dipinto-astratto-contemporaneo-milano-nord-italia-2021-ultrastruttura.webp",
+      "info": "Olio su tela in formato quadrato: densità cromatica e gesto contenuto. Pezzo da collezione o da inserire in progetti di interior design che richiedono un originale di formato medio."
     },
     {
       "id": 4,
@@ -91,7 +97,9 @@
       "year": 2021,
       "medium": "Olio su tela",
       "dimensions": "50x60 cm",
-      "image": "/artworks/le-evasioni-barbariche-dipinto-astratto-contemporaneo-milano-lombardia-2021-ultrastruttura.webp"
+      "location": "Bergamo, Lombardia",
+      "image": "/artworks/le-evasioni-barbariche-dipinto-astratto-contemporaneo-milano-lombardia-2021-ultrastruttura.webp",
+      "info": "Olio su tela con energia cromatica e struttura pittorica marcata. Dialoga bene con ambienti contemporanei a Milano e in Lombardia, da studi professionali a spazi espositivi."
     },
     {
       "id": 18,
@@ -99,7 +107,9 @@
       "year": 2021,
       "medium": "Olio e acrilico su tela",
       "dimensions": "45x55 cm",
-      "image": "/artworks/la-parte-a-maggese-dipinto-astratto-contemporaneo-milano-bergamo-lombardia-2021-ultrastruttura.webp"
+      "location": "Bergamo, Lombardia",
+      "image": "/artworks/la-parte-a-maggese-dipinto-astratto-contemporaneo-milano-bergamo-lombardia-2021-ultrastruttura.webp",
+      "info": "Olio e acrilico su tela: superficie lavorata, silenzio e ritmo. Opera originale per collezionisti e gallerie interessati a una pittura astratta contemporanea con forte identità materica."
     }
   ]
 }

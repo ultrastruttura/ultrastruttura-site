@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 import styles from './ImageModal.module.css'
-import { Artwork, siteSettings } from '@/data/artworks'
+import Link from 'next/link'
+import { Artwork, getArtworkSlug, siteSettings } from '@/data/artworks'
 import { buildArtworkAltText } from '@/lib/seo'
 
 interface ImageModalProps {
@@ -219,6 +220,11 @@ export default function ImageModal({
             {artwork.medium && <p className={styles.detailItem}>Tecnica: {artwork.medium}</p>}
             {artwork.dimensions && <p className={styles.detailItem}>Dimensioni: {artwork.dimensions}</p>}
             {artwork.location && <p className={styles.detailItem}>Luogo: {artwork.location}</p>}
+            <p className={styles.detailItem}>
+              <Link href={`/opere/${getArtworkSlug(artwork)}`} onClick={onClose}>
+                Scheda opera
+              </Link>
+            </p>
           </div>
         </div>
       </div>

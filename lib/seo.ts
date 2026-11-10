@@ -7,7 +7,6 @@ export function getBaseUrl(): string {
   return BASE_URL
 }
 
-/** Rimuove virgolette dal titolo opera per alt text e slug */
 export function normalizeArtworkTitle(title: string): string {
   return title.replace(/^["']|["']$/g, '').trim()
 }
@@ -42,7 +41,14 @@ export function parseDimensionsCm(
   }
 }
 
-/** Alt text descrittivo in italiano — ottimizzato per Google Immagini e accessibilità */
+export function detectArtworkSurface(medium?: string): string {
+  const m = (medium || '').toLowerCase()
+  if (m.includes('zinco')) return 'Zinco'
+  if (m.includes('carta')) return 'Carta'
+  if (m.includes('legno')) return 'Legno'
+  return 'Tela'
+}
+
 export function buildArtworkAltText(artwork: Artwork, settings: SiteSettings): string {
   if (artwork.imageAlt?.trim()) {
     return artwork.imageAlt.trim()
@@ -52,8 +58,9 @@ export function buildArtworkAltText(artwork: Artwork, settings: SiteSettings): s
   const area = formatServiceAreaLabel(settings)
   const medium = artwork.medium || 'tecnica mista su tela'
   const dims = artwork.dimensions ? `, ${artwork.dimensions}` : ''
+  const surface = detectArtworkSurface(artwork.medium)
 
-  return `Dipinto astratto contemporaneo "${title}" (${artwork.year}) di ${settings.artistName} — ${settings.brandName}, ${medium}${dims}. Opera disponibile per collezionisti e studi professionali in ${area}.`
+  return `Opera astratta contemporanea "${title}" (${artwork.year}) di ${settings.artistName} — ${settings.brandName}. ${medium}${dims}, supporto ${surface}. Disponibile per collezionisti, professionisti e gallerie in ${area}.`
 }
 
 export function buildArtworkDescription(
@@ -64,18 +71,23 @@ export function buildArtworkDescription(
   const area = formatServiceAreaLabel(settings)
   const medium = artwork.medium || 'tecnica mista su tela'
   const dims = artwork.dimensions ? `, ${artwork.dimensions}` : ''
+  const narrative = artwork.info?.trim()
+    ? ` ${artwork.info.trim()}`
+    : ''
 
-  return `Dipinto originale d'arte astratta contemporanea "${title}" (${artwork.year}) di ${settings.artistName} (${settings.brandName}). ${medium}${dims}. Disponibile per collezionisti e commissioni in ${area}.`
+  return `Opera originale d'arte astratta contemporanea "${title}" (${artwork.year}) di ${settings.artistName} (${settings.brandName}). ${medium}${dims}.${narrative} Target: collezionisti, studi professionali, interior designer e gallerie — ${area} e network internazionale.`
 }
 
 export function buildVisualArtworkSchema(
   artwork: Artwork,
   settings: SiteSettings,
-  baseUrl: string = BASE_URL
+  baseUrl: string = BASE_URL,
+  options?: { url?: string }
 ) {
   const { width, height, depth } = parseDimensionsCm(artwork.dimensions)
   const imageUrl = `${baseUrl}${artwork.imageFull || artwork.image}`
   const title = normalizeArtworkTitle(artwork.title)
+  const surface = detectArtworkSurface(artwork.medium)
 
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -118,9 +130,9 @@ export function buildVisualArtworkSchema(
       '@id': `${baseUrl}#artist`,
       name: settings.artistName,
     },
-    inLanguage: 'it',
+    inLanguage: ['it', 'en'],
     material: artwork.medium || 'Tecnica mista su tela',
-    surface: 'Tela',
+    surface,
     contentLocation: artwork.location
       ? {
           '@type': 'Place',
@@ -139,16 +151,22 @@ export function buildVisualArtworkSchema(
     keywords: [
       'dipinto astratto contemporaneo',
       'arte astratta originale',
-      settings.brandName.toLowerCase(),
+      'ultrastruttura',
       settings.artistName,
       'Milano',
       settings.locality || 'Bergamo',
       settings.region || 'Lombardia',
       settings.areaServed || 'Nord Italia',
+      'gallerie internazionali',
       artwork.medium?.toLowerCase(),
+      surface.toLowerCase(),
     ]
       .filter(Boolean)
       .join(', '),
+  }
+
+  if (options?.url) {
+    schema.url = options.url
   }
 
   if (artwork.available !== false) {
@@ -156,15 +174,22 @@ export function buildVisualArtworkSchema(
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
       priceCurrency: 'EUR',
-      areaServed: {
-        '@type': 'GeoCircle',
-        name: settings.areaServed || 'Nord Italia',
-      },
+      areaServed: [
+        { '@type': 'AdministrativeArea', name: settings.areaServed || 'Nord Italia' },
+        { '@type': 'City', name: 'Milano' },
+        { '@type': 'Country', name: 'Italia' },
+      ],
       seller: {
         '@type': 'Person',
         '@id': `${baseUrl}#artist`,
         name: settings.artistName,
       },
+    }
+  } else {
+    schema.offers = {
+      '@type': 'Offer',
+      availability: 'https://schema.org/SoldOut',
+      priceCurrency: 'EUR',
     }
   }
 

@@ -34,6 +34,19 @@
   background-color: #ffffff;
 }
 
+/* Titoli SEO / accessibilità: leggibili da crawler e screen reader, non in layout */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (max-width: 1024px) {
   .main {
     margin-left: 180px;

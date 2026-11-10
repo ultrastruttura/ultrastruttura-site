@@ -81,7 +81,7 @@ export default function CommissioniPage() {
               <li>Studi professionali, uffici e sedi aziendali</li>
               <li>Interior designer e architetti che cercano un pezzo unico per un progetto</li>
               <li>Collezionisti privati con spazi da valorizzare</li>
-              <li>Hotel, showroom e ambienti commerciali</li>
+              <li>Hotel, showroom, ambienti commerciali e gallerie (anche internazionali)</li>
             </ul>
 
             <h2 className={styles.sectionTitle}>Come funziona</h2>

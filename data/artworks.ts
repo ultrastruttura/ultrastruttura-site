@@ -1,4 +1,5 @@
 import siteContentData from './site-content.json'
+import { slugifyArtworkTitle } from '@/lib/artwork-filename'
 
 export interface Artwork {
   id: number
@@ -65,13 +66,13 @@ const defaultSiteSettings: SiteSettings = {
   brandName: 'UltraStruttura',
   artistName: 'Andrea Baldelli',
   artistLabel: 'Andrea Baldelli',
-  seoTitle: 'Ultrastruttura | Pittura Astratta Contemporanea di Andrea Baldelli',
+  seoTitle: 'Ultrastruttura | Pittura Astratta Contemporanea — Milano, Lombardia, Nord Italia',
   seoDescription:
-    'Dipinti astratti contemporanei originali di Andrea Baldelli (Ultrastruttura), artista a Bergamo, Lombardia. Opere su tela per collezionisti, studi professionali e commissioni in Nord Italia.',
+    'Dipinti astratti contemporanei originali di Andrea Baldelli (Ultrastruttura). Studio a Bergamo. Opere e commissioni per studi, interior designer, collezionisti e gallerie — Milano, Lombardia, Nord Italia e network internazionale.',
   locality: 'Bergamo',
   region: 'Lombardia',
   areaServed: 'Nord Italia',
-  serviceCities: ['Milano', 'Bergamo', 'Brescia', 'Monza', 'Como'],
+  serviceCities: ['Milano', 'Bergamo', 'Brescia', 'Monza', 'Como', 'Varese', 'Verona', 'Torino'],
 }
 
 export const siteSettings: SiteSettings = {
@@ -117,4 +118,12 @@ export const artworks: Artwork[] = rawArtworks
 
     return items
   }, [])
-  
+
+export function getArtworkSlug(artwork: Pick<Artwork, 'title' | 'year'>): string {
+  return `${slugifyArtworkTitle(artwork.title)}-${artwork.year}`
+}
+
+export function findArtworkBySlug(slug: string): Artwork | undefined {
+  return artworks.find((artwork) => getArtworkSlug(artwork) === slug)
+}
+ 

@@ -24,6 +24,8 @@ export const ARCHIVE_GEO_ROTATION = [
 /** Tag file immagine per opera in catalogo (id stabile → slug stabile) */
 export function getArtworkGeoTag(artworkId: number): string {
   switch (artworkId) {
+    case 260519:
+      return GEO_TAGS.milanoLombardia
     case 260504:
       return GEO_TAGS.milanoLombardia
     case 260210:
