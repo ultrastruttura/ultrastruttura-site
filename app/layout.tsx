@@ -4,6 +4,7 @@ import StructuredData from '@/components/StructuredData'
 import ScrollProgress from '@/components/ScrollProgress'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import GoogleSearchConsole from '@/components/GoogleSearchConsole'
+import UmamiAnalytics from '@/components/UmamiAnalytics'
 import { artworks, siteSettings, socialLinks } from '@/data/artworks'
 
 const ogArtwork =
@@ -102,6 +103,7 @@ export default function RootLayout({
     <html lang="it">
       <head>
         <GoogleSearchConsole />
+        <UmamiAnalytics />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
         <link rel="canonical" href="https://ultrastruttura.com" />
         <meta name="theme-color" content="#ffffff" />

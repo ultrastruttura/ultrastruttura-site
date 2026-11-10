@@ -78,6 +78,8 @@ jobs:
         env:
           NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
           NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION: ${{ secrets.GOOGLE_SEARCH_CONSOLE_VERIFICATION }}
+          NEXT_PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.UMAMI_WEBSITE_ID }}
+          NEXT_PUBLIC_UMAMI_SCRIPT_URL: ${{ secrets.UMAMI_SCRIPT_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

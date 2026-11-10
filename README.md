@@ -72,3 +72,5 @@ Secrets usati:
 
 - `NEXT_PUBLIC_FORMSPREE_ID`
 - `GOOGLE_SEARCH_CONSOLE_VERIFICATION`
+- `UMAMI_WEBSITE_ID` (Website ID da Umami Cloud o self-hosted)
+- `UMAMI_SCRIPT_URL` (opzionale; default `https://cloud.umami.is/script.js`)
